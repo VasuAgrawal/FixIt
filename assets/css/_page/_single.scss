@@ -134,25 +134,28 @@
     margin-block: 1rem;
     > h1,
     > h2 {
-      font-size: 1.5em;
+      font-size: 1.8em;
       padding-bottom: 0.3em;
       border-bottom: 1px solid $global-border-color;
     }
 
     > h3 {
-      font-size: 1.25em;
+      font-size: 1.5em;
     }
 
     > h4 {
-      font-size: 1em;
+      font-size: 1.2em;
+      text-transform: uppercase;
     }
 
     > h5 {
-      font-size: 0.875em;
+      font-size: 1em;
+      text-transform: uppercase;
     }
 
     > h6 {
       font-size: 0.85em;
+      text-transform: uppercase;
     }
 
     > .heading-element {

@@ -15,7 +15,12 @@
 {{- $h4Format := $headingConfig.number.format.h4 | default "{h2}.{h3}.{h4} {title}" -}}
 {{- $h5Format := $headingConfig.number.format.h5 | default "{h2}.{h3}.{h4}.{h5} {title}" -}}
 {{- $h6Format := $headingConfig.number.format.h6 | default "{h2}.{h3}.{h4}.{h5}.{h6} {title}" -}}
-{{- $level := .Level -}}
+
+{{- /* Add 1 to the level because I start at H1 in my posts (letting title be H0) */ -}}
+{{- /* And then clamp the max level to 6 (so overall shift range from [1,6] -> [2, 6]) */ -}}
+{{- /* $level := .Level */ -}}
+{{- $incLevel:= add .Level 1 -}}
+{{- $level := cond (le 6 $incLevel) 6 $incLevel -}}
 {{- $maxMarkupLevel := 2 -}}
 
 {{- /* Disable ordered headings on home page */ -}}
